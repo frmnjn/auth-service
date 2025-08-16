@@ -1,0 +1,36 @@
+spring:
+  application:
+    name: auth-service
+  datasource:
+    url: jdbc:postgresql://localhost:5432/user-management
+    username: postgres
+    password: HelloWorld123^!
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+    hibernate:
+      ddl-auto: none
+    show-sql: false
+  data:
+    redis:
+      host: localhost
+      port: 6379
+      password: ""   # if you have auth, set password
+      timeout: 60000
+---
+security:
+  jwt:
+    secret: "HelloWorld123^!HelloWorld123^!HelloWorld123^!HelloWorld123^!HelloWorld123^!"
+    # Expiration time in milliseconds (1 hour here)
+    expiration: 3600000
+    refresh-expiration: 604800000         # 7 days
+---
+server:
+  port: 8080
+  error:
+    include-message: always
+  servlet:
+    context-path: /auth-service
+  compression:
+    enabled: true
+    mime-types: application/json,application/xml,text/html

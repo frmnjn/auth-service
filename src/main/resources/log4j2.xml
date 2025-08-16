@@ -1,0 +1,31 @@
+<Configuration>
+    <Properties>
+        <Property name="log-path-auth-service">/var/log/auth-service/</Property>
+    </Properties>
+    <Appenders>
+        <Console name="Console" target="SYSTEM_OUT">
+            <PatternLayout pattern="%d{yyyy-MM-dd HH:mm:ss.SSS} [%T] [%X{MDC_ID}] %level %logger{10} - %msg%n"/>
+        </Console>
+        <RollingFile
+                name="auth-service-log"
+                fileName="${log-path-auth-service}/auth-service.log"
+                filePattern="${log-path-auth-service}/auth-service-%d{yyyy-MM-dd}-%i.log.gz">
+            <PatternLayout pattern="%d{yyyy-MM-dd HH:mm:ss.SSS} [%T] [%X{MDC_ID}] %level %logger{10} - %msg%n"/>
+            <Policies>
+                <SizeBasedTriggeringPolicy size="30 MB"/>
+            </Policies>
+            <DefaultRolloverStrategy max="999"/>
+        </RollingFile>
+    </Appenders>
+    <Loggers>
+        <Root level="info">
+            <AppenderRef ref="Console"/>
+            <AppenderRef ref="auth-service-log"/>
+        </Root>
+        <logger name="com.frmnjn" additivity="false">
+            <level value="debug"/>
+            <appender-ref ref="auth-service-log"/>
+            <appender-ref ref="Console"/>
+        </logger>
+    </Loggers>
+</Configuration>
