@@ -305,7 +305,6 @@ public class TokenAdminController {
       @RequestParam String sessionId,
       @RequestParam String accessToken,
       @RequestParam String refreshToken) {
-
     try {
       boolean areTied = authService.areTokensTied(username, sessionId, accessToken, refreshToken);
 

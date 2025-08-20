@@ -21,9 +21,8 @@ spring:
 security:
   jwt:
     secret: "HelloWorld123^!HelloWorld123^!HelloWorld123^!HelloWorld123^!HelloWorld123^!"
-    # Expiration time in milliseconds (1 hour here)
-    expiration: 3600000
-    refresh-expiration: 604800000         # 7 days
+    expiration: 3600000 # Expiration time in milliseconds (1 hour here)
+    refresh-expiration: 604800000 # 7 days
 ---
 server:
   port: 8080

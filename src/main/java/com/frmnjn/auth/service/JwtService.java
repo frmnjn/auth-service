@@ -1,4 +1,4 @@
-package com.frmnjn.auth.config;
+package com.frmnjn.auth.service;
 
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;

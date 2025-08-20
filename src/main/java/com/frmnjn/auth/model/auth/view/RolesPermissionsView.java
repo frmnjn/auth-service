@@ -1,4 +1,4 @@
-package com.frmnjn.auth.model.auth;
+package com.frmnjn.auth.model.auth.view;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -15,7 +15,7 @@ import java.util.UUID;
 @Entity
 @Table(name = "vw_roles_with_permissions")
 @ToString
-public class RolesPermissions {
+public class RolesPermissionsView {
 
   @Id
   @Column(name = "id")

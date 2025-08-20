@@ -29,5 +29,5 @@ public class AuthResponse {
 
   // Optional: Timestamp when tokens were issued
   @JsonProperty("issued_at")
-  private Long issuedAt = System.currentTimeMillis() / 1000;
+  private Long issuedAt = System.currentTimeMillis();
 }

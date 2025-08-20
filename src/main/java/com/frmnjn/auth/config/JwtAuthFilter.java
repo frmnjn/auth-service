@@ -1,5 +1,6 @@
 package com.frmnjn.auth.config;
 
+import com.frmnjn.auth.service.JwtService;
 import com.frmnjn.auth.service.MultiTokenService;
 import com.frmnjn.auth.service.UserInfoService;
 import jakarta.servlet.FilterChain;

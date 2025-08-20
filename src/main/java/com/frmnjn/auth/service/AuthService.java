@@ -1,14 +1,13 @@
 package com.frmnjn.auth.service;
 
-import com.frmnjn.auth.config.JwtService;
-import com.frmnjn.auth.dao.RoleRepository;
-import com.frmnjn.auth.dao.UserRepository;
 import com.frmnjn.auth.dto.AuthResponse;
 import com.frmnjn.auth.dto.RegisterRequest;
 import com.frmnjn.auth.exception.AuthException;
 import com.frmnjn.auth.exception.RegisterFailedException;
 import com.frmnjn.auth.model.auth.Role;
 import com.frmnjn.auth.model.auth.UserData;
+import com.frmnjn.auth.repository.RoleRepository;
+import com.frmnjn.auth.repository.UserRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;

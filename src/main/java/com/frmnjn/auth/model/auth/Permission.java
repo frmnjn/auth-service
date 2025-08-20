@@ -1,9 +1,8 @@
 package com.frmnjn.auth.model.auth;
 
+import com.frmnjn.auth.model.auth.view.RolesPermissionsView;
 import jakarta.persistence.*;
-import lombok.Getter;
-import lombok.Setter;
-import lombok.ToString;
+import lombok.*;
 import org.hibernate.annotations.ColumnDefault;
 
 import java.time.ZonedDateTime;
@@ -13,6 +12,8 @@ import java.time.ZonedDateTime;
 @Entity
 @Table(name = "permissions")
 @ToString
+@NoArgsConstructor
+@AllArgsConstructor
 public class Permission {
   @Id
   @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "permissions_id_gen")
@@ -33,5 +34,11 @@ public class Permission {
   @ColumnDefault("CURRENT_TIMESTAMP")
   @Column(name = "updated_at")
   private ZonedDateTime updatedAt;
+
+  public Permission(RolesPermissionsView rolesPermissionsView) {
+    this.id = rolesPermissionsView.getPermissionId();
+    this.name = rolesPermissionsView.getPermissionName();
+    this.description = rolesPermissionsView.getPermissionDescription();
+  }
 
 }

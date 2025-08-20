@@ -1,4 +1,4 @@
-package com.frmnjn.auth.dao;
+package com.frmnjn.auth.repository;
 
 import com.frmnjn.auth.model.auth.Role;
 import org.springframework.data.jpa.repository.JpaRepository;
