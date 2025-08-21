@@ -15,17 +15,23 @@ spring:
     redis:
       host: ${REDIS_HOST}
       port: ${REDIS_PORT}
-      password: ""   # if you have auth, set password
+      password: ""
       timeout: 60000
 ---
 security:
   jwt:
-    secret: "HelloWorld123^!HelloWorld123^!HelloWorld123^!HelloWorld123^!HelloWorld123^!"
+    secret: ${JWT_SECRET}
     expiration: 3600000 # Expiration time in milliseconds (1 hour here)
     refresh-expiration: 604800000 # 7 days
 ---
 server:
-  port: 8080
+  port: ${SERVER_PORT}
+  http2:
+    enabled: true
+  ssl:
+    certificate: ${SSL_PUB_CERT_PATH}
+    certificate-private-key: ${SSL_PRIV_CERT_PATH}
+    enabled: true
   error:
     include-message: always
   servlet:

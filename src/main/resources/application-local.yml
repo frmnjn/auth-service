@@ -15,7 +15,7 @@ spring:
     redis:
       host: localhost
       port: 6379
-      password: ""   # if you have auth, set password
+      password: ""
       timeout: 60000
 ---
 security:
@@ -25,7 +25,13 @@ security:
     refresh-expiration: 604800000 # 7 days
 ---
 server:
-  port: 8080
+  port: 8443
+  http2:
+    enabled: true
+  ssl:
+    certificate: "/Users/firmanbudi.safrizal/Documents/TOOLS/DOCKER/ALL/certs/fullchain.pem"
+    certificate-private-key: "/Users/firmanbudi.safrizal/Documents/TOOLS/DOCKER/ALL/certs/privkey.pem"
+    enabled: true
   error:
     include-message: always
   servlet:
